@@ -3,7 +3,7 @@
 
 **A Comprehensive Exploration of Airport Management**
 
-AeroManage is your passport to the world of airport management. Dive into the intricate web of aviation operations, strategies, and innovations that keep airports running smoothly and passengers flying safely. This project provides a 360-degree view of the challenges and solutions that shape the modern aviation landscape.
+AeroManage is your passport to the world of airport management. Dive into the intricate Desktop application of aviation operations, strategies, and innovations that keep airports running smoothly and passengers flying safely. This project provides a 360-degree view of the challenges and solutions that shape the modern aviation landscape.
 
 ## Table of Contents
 - [About](#about)
