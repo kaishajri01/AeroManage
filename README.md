@@ -1,8 +1,5 @@
 # AeroManage
-In AeroManage, we explore airport management: flight coordination, infrastructure, partnerships, and service. Our project offers a 360° view of aviation's challenges and innovations.
-# AeroManage
 
-![AeroManage Logo](link-to-your-logo.png)
 
 **A Comprehensive Exploration of Airport Management**
 
@@ -12,8 +9,8 @@ AeroManage is your passport to the world of airport management. Dive into the in
 - [About](#about)
 - [Key Features](#key-features)
 - [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
+
+
 
 ## About
 
@@ -39,5 +36,6 @@ To get started with AeroManage, follow these steps:
 
 1. Clone this repository to your local machine:
    ```sh
+   https://github.com/kaishajri01/AeroManage.git
    
 
