@@ -1,0 +1,123 @@
+void supprime_racine(struct noeud**);
+void supprime_sous(int,struct noeud**);
+void supprime(int,struct noeud**);
+
+*********************************
+void supprime_racine(struct noeud **ab)
+{
+    struct noeud *tmp=(*ab),*aux;
+    if(!tmp->sdroite&&!tmp->sgauche)
+        {
+            free(*ab);
+            (*ab)=NULL;
+            return;
+        }
+    if(tmp->sgauche&&!tmp->sdroite)
+        {
+            (*ab)=tmp->sgauche;
+            free(tmp);
+            return;
+        }
+    if(!tmp->sgauche&&tmp->sdroite)
+        {
+            (*ab)=tmp->sdroite;
+            free(tmp);
+            return;
+        }
+
+    tmp=tmp->sdroite;
+    if(tmp->sdroite==NULL&&tmp->sgauche==NULL)
+    {
+        (*ab)->cle=tmp->cle;
+        free(tmp);
+        (*ab)->sdroite=NULL;
+        return;
+    }
+    while(tmp->sgauche)
+    {
+        aux=tmp;
+        tmp=tmp->sgauche;
+    }
+    (*ab)->cle=tmp->cle;
+    aux->sgauche=tmp->sdroite;
+    free(tmp);
+
+}
+void supprime_sous(int x,struct noeud **ab)
+{
+    struct noeud *tmp=(*ab),*p=NULL,*aux,*aux1;
+    unsigned where;
+    while(tmp->cle!=x)
+    {
+        if(x>tmp->cle)
+            {
+                p=tmp;
+                tmp=tmp->sdroite;
+                where=1;
+            }
+        else
+            {
+                p=tmp;
+                tmp=tmp->sgauche;
+                where=0;
+            }
+    }
+    if(!tmp->sdroite&&!tmp->sgauche)
+        {
+            free(tmp);
+            if(where)
+                p->sdroite=NULL;
+            else
+                p->sgauche=NULL;
+            return;
+        }
+    if(tmp->sgauche&&!tmp->sdroite)
+        {
+            if(where)
+                p->sdroite=tmp->sgauche;
+            else
+                p->sgauche=tmp->sgauche;
+            free(tmp);
+            return;
+        }
+    if(!tmp->sgauche&&tmp->sdroite)
+        {
+            if(where)
+                p->sdroite=tmp->sdroite;
+            else
+                p->sgauche=tmp->sdroite;
+            free(tmp);
+            return;
+        }
+
+    aux1=tmp->sdroite;
+    while(aux1->sgauche)
+    {
+        aux=aux1;
+        aux1=aux1->sgauche;
+    }
+    tmp->cle=aux1->cle;
+    aux->sgauche=aux1->sdroite;
+    free(aux1);
+
+}
+void supprime(int x,struct noeud **ab)
+{
+    struct noeud *tmp=*ab;
+    if(tmp->cle==x)
+    {
+        supprime_racine(ab);
+        return;
+    }
+    while(tmp&&tmp->cle!=x)
+    {
+        if(x>tmp->cle)
+            tmp=tmp->sdroite;
+        else
+            tmp=tmp->sgauche;
+    }
+    if(tmp)
+        supprime_sous(x,ab);
+    else
+        printf("le nombre n'existe pas !");
+}
