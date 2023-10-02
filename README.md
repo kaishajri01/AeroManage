@@ -30,6 +30,13 @@ Airport management is the backbone of the aviation industry, and AeroManage is y
 
 - **Customer Service:** Delve into the strategies that airports employ to enhance the passenger experience.
 
+## Contributing
+We welcome contributions from the aviation community and anyone interested in airport management. Whether it's fixing a typo or adding a substantial feature, your contributions make AeroManage better for everyone. For more information, please read our Contributing Guidelines.
+
+## License
+
+AeroManage is an open-source project created with a passion for aviation and a commitment to sharing knowledge about airport management. Join us in exploring the skies and the operations that make air travel possible.
+
 ## Getting Started
 
 To get started with AeroManage, follow these steps:
